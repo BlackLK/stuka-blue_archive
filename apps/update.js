@@ -136,7 +136,7 @@ export class update extends plugin {
 
     let end = "";
     end =
-      "更多详细信息，请前往\n查看";
+      "更多详细信息，请前往https://github.com/BlackLK/stuka-blue_archive/blob/master/README.md查看";
 
     log = await this.makeForwardMsg(`ba插件更新日志，共${line}条`, log, end);
 
