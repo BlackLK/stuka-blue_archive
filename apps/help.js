@@ -26,8 +26,7 @@ export class help extends plugin {
 
     //函数
     async help(e) {
-        e.reply("帮助说明!");//输出Hello，world！
-        //阻止消息不再往下
+        e.reply("输入#攻略XXX就可以使用啦");
         return;
     };
 };
