@@ -1,3 +1,4 @@
+# 使用的是arona（https://doc.arona.diyigemt.com/）所以就不用拉取这些文件夹里的资源了
 /node_modules/chapter_map
 /node_modules/some
 /node_modules/student_rank
