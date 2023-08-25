@@ -27,3 +27,5 @@
 ```javascript
 git clone https://github.com/BlackLK/stuka-blue_archive.git ./plugins/stuka-blue_archive
 ```
+
+2、重启yunzai机器人
