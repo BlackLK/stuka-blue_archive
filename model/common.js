@@ -11,9 +11,9 @@ export default {
     
   },
   compareMD5(md5_1, md5_2) {
-    console.log('md5_1：'+md5_1);
-    console.log(md5_2);
-    console.log(md5_1 == md5_2)
+    // console.log('md5_1：'+md5_1);
+    // console.log(md5_2);
+    // console.log(md5_1 == md5_2)
     return md5_1 == md5_2 ;
   },
   /**
