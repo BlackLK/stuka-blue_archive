@@ -33,13 +33,13 @@ export class gongLue extends plugin {
     async getFindName(e) {
         //get 请求外网  
         var userMessage = e.msg;
-        logger.info('--->');
+        // logger.info('--->');
         // logger.info(e);
-        logger.info(userMessage);
+        // logger.info(userMessage);
         userMessage = userMessage.slice(userMessage.indexOf('#攻略')+3,userMessage.length);
         // logger.info(userMessage);
         var getUrl = aronaUrl+'?name='+userMessage;
-        logger.info('请求地址：'+getUrl);
+        // logger.info('请求地址：'+getUrl);
 
         fetch(getUrl)
             .then(res => res.json()) // expecting a json response
@@ -48,10 +48,10 @@ export class gongLue extends plugin {
                 if(json.status == 200) {
                     //返回精确结果,找到本地文件，有则判断md5是否一致（不一致更新）；未找到本地文件则再次访问arona
                     var data = json.data[0];
-                    console.log('数据---》');
+                    // console.log('数据---》');
                     // console.log(data);
                     if(this.findFile(e, data)) {
-                        console.log('进入了')
+                        // console.log('进入了')
                         var imgPath = data.path;
                         this.getAronaImg(e,imgPath);
                     }
@@ -90,14 +90,14 @@ export class gongLue extends plugin {
 
     async getResult(e) {
         //get 请求外网  
-        logger.info('第二次查询')
-        logger.info(e);
-        console.log(e.reply);
-        console.log(e.replyNew);
+        // logger.info('第二次查询')
+        // logger.info(e);
+        // console.log(e.reply);
+        // console.log(e.replyNew);
         var data = e.stukaData;
         var userMessage = e.message;
         var getUrl = aronaUrl2+'?name='+userMessage;
-        logger.info('请求地址：'+getUrl);
+        // logger.info('请求地址：'+getUrl);
         // this.getAronaImg(e, url);
         this.finish('getResult');
         return ;
@@ -119,8 +119,8 @@ export class gongLue extends plugin {
             console.info(fileFlag);
             // 对比md5
              var md5_2 = common.getFileMD5(target);
-             console.log('----------------------');
-             console.log(md5_2);
+            //  console.log('----------------------');
+            //  console.log(md5_2);
             if(common.compareMD5(data.hash, md5_2)) {
                 let msg = ['查询结果：'+officialName,
                         segment.image(target)
@@ -144,7 +144,7 @@ export class gongLue extends plugin {
         /* 文件存储地址 */
         let target = `${glPath}`+url;
         var imgp = target.slice(0,target.lastIndexOf("/"));
-        logger.info(imgp);
+        // logger.info(imgp);
         common.mkDirByPathSync(imgp);
         /* 下载文件地址 */
         url = aronaUrl2+url;
@@ -154,9 +154,9 @@ export class gongLue extends plugin {
         const fileStream = fs.createWriteStream(target).on('error', function(err) {
             logger.info('错误', err)
         }).on('ready', function() {
-            logger.info("开始下载:");
+            // logger.info("开始下载:");
         }).on('finish', function() {
-            logger.info('文件下载完成:');
+            // logger.info('文件下载完成:');
             let msg = ['查询结果：'+officialName,
                         segment.image(target)
                     ];
