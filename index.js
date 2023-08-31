@@ -2,9 +2,9 @@
 import fs from 'node:fs'
 
 //输出提示
-logger.info('蔚蓝档案插件')
+logger.info('stuka蔚蓝档案插件')
 logger.info('加载中。。。')
-logger.info('你好，我的朋友')
+logger.info('感谢使用')
 //如需更多可复制粘贴
 //info可替换为: debug mark error
 

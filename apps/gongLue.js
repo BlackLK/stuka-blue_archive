@@ -21,7 +21,7 @@ export class gongLue extends plugin {
             rule: [
                 {
                     //正则表达式
-                    reg: '^#攻略',
+                    reg: '^ba攻略[^]+',
                     //函数
                     fnc: 'getFindName'
                 }
@@ -35,9 +35,10 @@ export class gongLue extends plugin {
         var userMessage = e.msg;
         // logger.info('--->');
         // logger.info(e);
-        // logger.info(userMessage);
-        userMessage = userMessage.slice(userMessage.indexOf('#攻略')+3,userMessage.length);
-        // logger.info(userMessage);
+        logger.info(userMessage);
+        var f = 'ba攻略';
+        userMessage = userMessage.slice(userMessage.indexOf(f)+f.length,userMessage.length);
+        logger.info(userMessage);
         var getUrl = aronaUrl+'?name='+userMessage;
         // logger.info('请求地址：'+getUrl);
 
@@ -148,8 +149,8 @@ export class gongLue extends plugin {
         common.mkDirByPathSync(imgp);
         /* 下载文件地址 */
         url = aronaUrl2+url;
-        logger.info('请求地址：'+url);
-        logger.info('文件存储地址：'+target);
+        // logger.info('请求地址：'+url);
+        // logger.info('文件存储地址：'+target);
         /* 创建文件流 */
         const fileStream = fs.createWriteStream(target).on('error', function(err) {
             logger.info('错误', err)

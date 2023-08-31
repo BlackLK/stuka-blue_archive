@@ -16,7 +16,7 @@ export class help extends plugin {
             rule: [
                 {
                     //正则表达试
-                    reg: '^#ba帮助$',
+                    reg: '^ba帮助$',
                     //函数
                     fnc: 'help'
                 }
@@ -26,7 +26,7 @@ export class help extends plugin {
 
     //函数
     async help(e) {
-        e.reply("输入#攻略XXX就可以使用啦");
+        e.reply("输入ba攻略XXX就可以使用啦");
         return;
     };
 };

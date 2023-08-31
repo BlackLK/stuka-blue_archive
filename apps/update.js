@@ -20,7 +20,7 @@ export class update extends plugin {
       priority: 1009,
       rule: [
         {
-          reg: "^#*(ba|BA|Ba)(插件)?(更新|强制更新)$",
+          reg: "^(ba|BA|Ba)(插件)?(更新|强制更新)$",
           fnc: "update",
         },
       ],
